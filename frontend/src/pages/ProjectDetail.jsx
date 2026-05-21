@@ -45,8 +45,28 @@ export default function ProjectDetail() {
         grouped[task.status].push(task);
       }
     });
+
+    const PRIORITY_ORDER = {
+      URGENT: 4,
+      HIGH: 3,
+      MEDIUM: 2,
+      LOW: 1,
+    };
+
+    Object.keys(grouped).forEach((status) => {
+      grouped[status].sort((a, b) => {
+        const priorityA = PRIORITY_ORDER[a.priority] || 2;
+        const priorityB = PRIORITY_ORDER[b.priority] || 2;
+        if (priorityA !== priorityB) {
+          return priorityB - priorityA;
+        }
+        return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+      });
+    });
+
     return grouped;
   }, [tasks]);
+
 
   const handleTaskSubmit = (data) => {
     if (data.id) {

@@ -22,7 +22,7 @@ class TaskSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at',
         ]
         read_only_fields = [
-            'id', 'created_by', 'created_at', 'updated_at',
+            'id', 'project', 'created_by', 'created_at', 'updated_at',
         ]
 
     def validate_due_date(self, value):
