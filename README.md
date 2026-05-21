@@ -1,4 +1,4 @@
-# ⚡ TaskFlow — Modern Task & Project Management Workspace
+# ⚡ WorkBoard — Modern Task & Project Management Workspace
 
 TaskFlow is a production-ready, high-performance, full-stack project and task management workspace. Built on top of a secure **Django REST Framework** API and a premium **React SPA** frontend, it features a fluid Kanban workflow, sleek glassmorphic layouts, and robust token-based authentication.
 
